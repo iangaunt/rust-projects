@@ -1,6 +1,7 @@
-mod node { include!("../structs/node.rs"); }
+mod nodes { include!("../structs/nodes.rs"); }
 
-use node::Node;
+use nodes::Node;
+use nodes::TreeNode;
 
 pub struct Rectangle {
     width: i32,
@@ -78,10 +79,12 @@ pub fn make_shapes() {
     print_account(&acc);
     print_account(&acc2);
 
+    let k: Color = Color(10, 20, 30);
+    println!("{:?}, {:?}, {:?}", k.0, k.1, k.2);
+
     let n1: Node = Node::new(10);
     let mut n2: Node = Node::new(20);
     n2.next = Some(Box::new(n1));
 
-    let k: Color = Color(10, 20, 30);
-    println!("{:?}, {:?}, {:?}", k.0, k.1, k.2);
+    
 }
